@@ -968,6 +968,9 @@ footer {
   padding: 20px;
 
   background-color: rgba(255, 165, 0, 0.5);
+
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -979,15 +982,75 @@ footer {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
 
-  min-height: 300px;
-  min-width: 300px;
+  /* width: 528px; */
 
-  padding: 20px;
+  padding: 40px;
 
   background-color: #fff;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* когда backdrop спрятан, модальное окно тоже спрятано: */
+.backdrop.is-hidden .popup {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.popup-field {
+  position: relative;
+}
+
+.popup-field-label {
+  position: absolute;
+
+  top: 50%;
+  left: 40px;
+
+  font-family: var(--font-main);
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  color: #757575;
+
+  transform: translateY(-50%);
+  transition: transform 250ms linear;
+}
+
+/* выбрать label, который идёт за input, когда у того не показывается placeholder:
+(+ стоит, потому что выбираем label, который стоит после input) */
+.popup-field-input:focus + .popup-field-label,
+.popup-field-input:not(:placeholder-shown) + .popup-field-label {
+  transform: translateY(-45px);
+
+  color: var(--accent-color);
+}
+
+
+.popup-field-input:placeholder-shown {
+  color: palevioletred;
+}
+
+.popup-field-input {
+  display: flex;
+
+  width: 100%;
+  /* height: 40px; */
+  
+  margin-bottom: 28px;
+  
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  font: inherit;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
 
 /*PORTFOLIO*/
 

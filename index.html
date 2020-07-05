@@ -429,9 +429,34 @@
     </footer>
 
     <div class="backdrop is-hidden" data-modal>
-      <div class="popup">
-        <button class="popup-send" data-modal-close>Отправить</button>
-      </div>
+        <form class="popup">
+          <!-- <b class="popup-title">Оставьте свои данные, мы Вам перезвоним</b> -->
+
+          <div class="popup-field">
+           <!-- for="name" для id="name" -->
+            <input class="popup-field-input" type="text" name="name" id="name" placeholder=" " />
+            <label class="popup-field-label" for="name">Имя</label>
+          </div>
+
+          <div class="popup-field">
+            <input class="popup-field-input" type="tel" name="telephone" id="telephone" placeholder=" " />
+            <label class="popup-field-label" for="telephone">Телефон</label>
+          </div>
+
+          <div class="popup-field">
+            <input class="popup-field-input" type="email" name="mail" id="mail" placeholder=" " />
+            <label class="popup-field-label" for="mail">Почта</label>
+          </div>
+
+          <div class="popup-field">
+            <textarea class="popup-field-textarea" name="comment" id="comment" rows="10" placeholder="Комментарий"></textarea>
+          </div>
+
+          <input type="checkbox" name="accept-mailing" id="popup-checkbox" />
+          <label for="popup-checkbox">Соглашаюсь с рассылкой и принимаю Условия договора</label>
+
+          <button class="popup-send" type="submit" data-modal-close>Отправить</button>
+        </form>
     </div>
 
     <script src="./js/modal.js"></script>
