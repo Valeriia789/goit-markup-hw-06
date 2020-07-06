@@ -983,7 +983,12 @@ footer {
   top: 50%;
   left: 50%;
 
-  /* width: 528px; */
+  width: 528px;
+
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
   padding: 40px;
 
@@ -1000,6 +1005,24 @@ footer {
   transform: translate(-50%, -50%) scale(0.9);
 }
 
+.popup-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  margin-bottom: 30px;
+
+  font-family: var(--font-main);
+  color: var(--title-text-color);
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
 .popup-field {
   position: relative;
 }
@@ -1008,7 +1031,7 @@ footer {
   position: absolute;
 
   top: 50%;
-  left: 40px;
+  left: 42px;
 
   font-family: var(--font-main);
   font-size: 14px;
@@ -1020,7 +1043,7 @@ footer {
   transition: transform 250ms linear;
 }
 
-/* выбрать label, который идёт за input, когда у того не показывается placeholder:
+/* выбрать label, который идёт сразу за input, когда у того не показывается placeholder:
 (+ стоит, потому что выбираем label, который стоит после input) */
 .popup-field-input:focus + .popup-field-label,
 .popup-field-input:not(:placeholder-shown) + .popup-field-label {
@@ -1035,8 +1058,11 @@ footer {
 }
 
 .popup-field-input {
+  position: relative;
   display: flex;
 
+  align-items: center;
+  justify-content: center;
   width: 100%;
   /* height: 40px; */
   
@@ -1044,13 +1070,114 @@ footer {
   
   padding-top: 12px;
   padding-bottom: 12px;
+  padding-left: 42px;
+  padding-right: 18px;
 
   font: inherit;
+  cursor: pointer;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 }
 
+.popup-field-textarea {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 120px;
+  resize: none;
+
+  margin-bottom: 20px;
+  padding: 12px 16px;
+
+  font-family: var(--font-main);
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+
+  cursor: pointer;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.popup-icon {
+  position: absolute;
+  left: 19px;
+  top: 14px;
+
+  display: flex;
+}
+
+.accept-conditions {
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  margin-bottom: 30px;
+
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.accept-conditions-box {
+  color: var(--title-text-color);
+}
+
+.accept-conditions-text {
+  display: inline-block;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+  letter-spacing: 0.03em;
+  color: #757575;
+}
+
+.conditions-text {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.popup-send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 200px;
+  height: 50px;
+
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 55px;
+
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  /* identical to box height, or 187% */
+  letter-spacing: 0.06em;
+  
+  color: #FFFFFF;
+
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  cursor: pointer;
+
+  border-color: transparent;
+}
 
 /*PORTFOLIO*/
 
