@@ -415,28 +415,28 @@
           </ul>
         </div>
 
-        <div class="subscribe">
+        <form class="subscribe-form">
           <p class="subscribe-text">Подпишитесь на рассылку</p>
-          <a class="subscribe-button"
-            >Подписаться
-            <svg class="icon-send" width="24px" height="24px">
-              <use href="./images/sprite.svg#icon-iconsend"></use>
-            </svg>
-          </a>
-        </div>
+          <div class="subscribe-container">
+            <input class="subscribe-input" type="email" name="mail" placeholder="E-mail" />
+            <button class="subscribe-button" type="submit">
+              Подписаться
+              <svg class="icon-send" width="24px" height="24px">
+                <use href="./images/sprite.svg#icon-iconsend"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
       </div>
-
-      <div class="developers">2020 | Developed by GoIT Students</div>
     </footer>
 
     <div class="backdrop is-hidden" data-modal>
       <form class="popup">
-
-        <Button class="popup-close" data-modal-close>
+        <button class="popup-close" data-modal-close>
           <svg class="popup-close-icon">
-          <use href="./images/sprite.svg#icon-close-black"></use>
+            <use href="./images/sprite.svg#icon-close-black"></use>
           </svg>
-        </Button>
+        </button>
 
         <div class="popup-title"><b>Оставьте свои данные, мы Вам перезвоним</b></div>
 
