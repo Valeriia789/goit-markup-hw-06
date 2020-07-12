@@ -1016,6 +1016,54 @@ footer {
   transform: translate(-50%, -50%) scale(0.9);
 }
 
+.popup-close {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  right: 8px;
+  top: 8px;
+
+  width: 30px;
+  height: 30px;
+
+  padding: 0px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: white;
+  cursor: pointer;
+}
+  
+/* 
+  background-image: url(../images/checkbox-close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: inherit;
+*/
+
+.popup-close-icon {
+  position: absolute;
+  display: block;
+
+  width: 11px;
+  height: 11px;
+
+  fill: #212121;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.popup-close-icon:hover,
+.popup-close-icon:focus {
+  fill: var(--accent-color);
+}
+
+.popup-close:hover,
+.popup-close:focus {
+  outline: none;
+}
+
 .popup-title {
   display: flex;
   align-items: center;
