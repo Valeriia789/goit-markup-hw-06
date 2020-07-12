@@ -305,18 +305,19 @@
           </ul>
         </div>
 
-        <div class="subscribe">
+        <form class="subscribe-form">
           <p class="subscribe-text">Подпишитесь на рассылку</p>
-          <a class="subscribe-button"
-            >Подписаться
-            <svg class="icon-send" width="24px" height="24px">
-              <use href="./images/sprite.svg#icon-iconsend"></use>
-            </svg>
-          </a>
-        </div>
+          <div class="subscribe-container">
+            <input class="subscribe-input" type="email" name="mail" placeholder="E-mail" />
+            <button class="subscribe-button" type="submit">
+              Подписаться
+              <svg class="icon-send" width="24px" height="24px">
+                <use href="./images/sprite.svg#icon-iconsend"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
       </div>
-
-      <div class="developers">2020 | Developed by GoIT Students</div>
     </footer>
 
     <script src="./js/modal.js"></script>
