@@ -49,6 +49,17 @@ p {
   margin: 0px;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0px;
+  padding: 0px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 /* top line, header */
 
 .header-top {
@@ -983,7 +994,7 @@ footer {
   top: 50%;
   left: 50%;
 
-  width: 528px;
+  /* width: 528px; */
 
   display: block;
   align-items: center;
@@ -1031,27 +1042,27 @@ footer {
   position: absolute;
 
   top: 50%;
-  left: 42px;
+  left: 10px;
+
+  transform: translateY(-50%) translateX(40px);
+  transition: transform 250ms linear;
 
   font-family: var(--font-main);
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.01em;
   color: #757575;
-
-  transform: translateY(-50%);
-  transition: transform 250ms linear;
 }
 
 /* выбрать label, который идёт сразу за input, когда у того не показывается placeholder:
 (+ стоит, потому что выбираем label, который стоит после input) */
-.popup-field-input:focus + .popup-field-label,
-.popup-field-input:not(:placeholder-shown) + .popup-field-label {
-  transform: translateY(-45px);
+
+.popup-field-input:focus ~ .popup-field-label,
+.popup-field-input:not(:placeholder-shown) ~ .popup-field-label {
+  transform: translateY(-40px) translateX(15px);
 
   color: var(--accent-color);
 }
-
 
 .popup-field-input:placeholder-shown {
   color: palevioletred;
@@ -1065,9 +1076,9 @@ footer {
   justify-content: center;
   width: 100%;
   /* height: 40px; */
-  
+
   margin-bottom: 28px;
-  
+
   padding-top: 12px;
   padding-bottom: 12px;
   padding-left: 42px;
@@ -1106,10 +1117,18 @@ footer {
 .popup-icon {
   position: absolute;
   left: 19px;
-  top: 14px;
+  /* top: 14px; */
+  top: 50%;
+  transform: translateY(-50%);
 
-  display: flex;
+  transition: transform 250ms linear;
 }
+
+.popup-field-input:focus ~ .popup-icon {
+  fill: var(--accent-color);
+}
+
+/* ----checkbox---- */
 
 .accept-conditions {
   align-items: center;
@@ -1123,15 +1142,56 @@ footer {
   cursor: pointer;
 }
 
+.accept-conditions-checkbox,
+.accept-conditions-text,
+.conditions-text {
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
 .accept-conditions-box {
-  color: var(--title-text-color);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  position: absolute;
+}
+
+.accept-conditions-box ~ .accept-conditions-text:before {
+  content: '';
+  display: block;
+
+  width: 16px;
+  height: 16px;
+
+  margin-right: 8px;
+
+  border: 2px solid #212121;
+  border-radius: 2px;
+
+  flex-shrink: 0;
+
+  transition: all 100ms linear;
+}
+
+.accept-conditions-box:checked ~ .accept-conditions-text:before {
+  background-color: var(--accent-color);
+  border-color: transparent;
+  background-image: url(../images/checkbox-Vector.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: inherit;
 }
 
 .accept-conditions-text {
-  display: inline-block;
+  display: inline-flex;
   text-align: center;
   align-items: center;
   justify-content: center;
+
+  margin-right: 4px;
 
   font-family: var(--font-main);
   font-style: normal;
@@ -1144,8 +1204,18 @@ footer {
 }
 
 .conditions-text {
+  display: inline-flex;
+
   color: var(--accent-color);
   text-decoration: underline;
+
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+  letter-spacing: 0.03em;
 }
 
 .popup-send {
@@ -1167,8 +1237,8 @@ footer {
   line-height: 30px;
   /* identical to box height, or 187% */
   letter-spacing: 0.06em;
-  
-  color: #FFFFFF;
+
+  color: #ffffff;
 
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
