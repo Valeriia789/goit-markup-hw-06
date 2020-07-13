@@ -1173,6 +1173,7 @@ footer {
 /* .popup-field-input:placeholder-shown {} */
 
 .popup-field-textarea {
+  position: relative;
   display: flex;
 
   align-items: center;
@@ -1198,6 +1199,29 @@ footer {
 .popup-field-textarea:focus {
   outline: none;
   border-color: var(--accent-color);
+}
+
+.textarea-field-label {
+  position: absolute;
+
+  top: 15%;
+  left: 0px;
+
+  transform: translateY(-50%) translateX(40px);
+  transition: transform 250ms linear;
+  cursor: pointer;
+
+  font-family: var(--font-main);
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  color: #757575;
+}
+
+.popup-field-textarea:focus ~ .textarea-field-label,
+.popup-field-textarea:not(:placeholder-shown) ~ .textarea-field-label {
+  transform: translateY(-40px) translateX(15px);
+  color: var(--accent-color);
 }
 
 .popup-icon {
